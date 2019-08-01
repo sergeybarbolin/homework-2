@@ -4,10 +4,10 @@ import './Chat.css';
 
 class Chat extends Component {
     constructor (props) {
-        super(props);
+        super(props)
         this.state = {
-            messageInput: '',
-            messages: []
+            messages: [],
+            messageInput: ''
         }
     }
 
@@ -23,25 +23,23 @@ class Chat extends Component {
             }))
         }
     }
-    
+
     render() {
         return (
             <div className="chat">
                 <div className="message-list">
                     <div className="messages">
-                        {this.state.messages.map((message, index) => {
-                            return <Message key={index} text={message.text}/>
-                        })}
+                        {this.state.messages.map((message, index) => <Message key={index} text={message.text}/>)}
                     </div>
                 </div>
-                <input 
-                    className="input-message" 
-                    type="text" 
+                <input
+                    className="input-message"
+                    type="text"
                     value={this.state.messageInput}
                     onChange={this.changeInputMessage}
-                    onKeyDown={this.sendMessageOnEnter}
+                    onKeyPress={this.sendMessageOnEnter}
                 />
-            </div> 
+            </div>
         )
     }
 }
