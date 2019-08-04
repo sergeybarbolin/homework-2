@@ -3,12 +3,9 @@ import Message from './../Message';
 import './Chat.css';
 
 class Chat extends Component {
-    constructor (props) {
-        super(props)
-        this.state = {
-            messages: [],
-            messageInput: ''
-        }
+    state = {
+        messages: [],
+        messageInput: ''
     }
 
     changeInputMessage = event => {
